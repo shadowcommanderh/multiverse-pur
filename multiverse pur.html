@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multiverse Pur- Telegram Group</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+    }
+
+    .screen {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      width: 100%;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    .welcome img, .transition img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .login {
+      background: url('https://i.ibb.co/9tzTTqM/saraswati.jpg') no-repeat center center/cover;
+    }
+
+    .login h2 {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .login input {
+      margin: 10px;
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+    }
+
+    .login button {
+      padding: 10px 20px;
+      background: orange;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .main {
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+    }
+
+    .main h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .main a {
+      background: #ff9800;
+      padding: 14px 28px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .main .about {
+      max-width: 600px;
+      font-size: 1rem;
+      color: #eee;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Screen -->
+  <div class="screen welcome active" id="welcome">
+    <img src="c:\Users\hp\Downloads\photo_6192811523768960860_x.jpg" alt="Maa Saraswati" />
+  </div>
+
+  <!-- Login Screen -->
+  <div class="screen login" id="login">
+     <img src="c:\Users\hp\Downloads\photo_6192811523768960860_x.jpg" alt="Maa Saraswati Again" width="1400" height="857"/>
+    <h2 style="background-color:blue; color:white; ">Login with Telegram</h2>
+    <input style="background-color: yellow;" type="text" id="username" placeholder="Enter Telegram Username" />
+    <input style="background-color: yellow;" type="text" id="profile" placeholder="Enter Telegram Profile Link" />
+    <button style="background-color: blue ;" onclick="submitForm()">Submit</button>
+  </div>
+
+  <!-- Transition Screen -->
+  <div class="screen transition" id="transition">
+    <img src="c:\Users\hp\Downloads\photo_6192811523768960860_x.jpg" alt="Maa Saraswati Again" />
+  </div>
+
+  <!-- Main Screen -->
+  <div mg src="c:\Users\hp\Downloads\photo_6192811523768960860_x.jpg" alt="Maa Saraswati Again" class="screen main" id="main">
+    <h1>🌌 MULTIVERSE</h1>
+    <a href="https://t.me/YOUR_GROUP_LINK" target="_blank">Join Our Telegram Group</a>
+    <div class="about">
+      <h3>About</h3>
+      <p>Multiverse ek digital jagah hai jahan har idea, har soch, aur har emotion ek naye world se milta hai. Join karke naye doston aur naye sochon se jud jao!</p>
+    </div>
+  </div>
+
+  <script>
+    // Welcome screen auto to login
+    setTimeout(() => {
+      document.getElementById("welcome").classList.remove("active");
+      document.getElementById("login").classList.add("active");
+    }, 3000);
+
+    function submitForm() {
+      const username = document.getElementById("username").value;
+      const profile = document.getElementById("profile").value;
+
+      if (!username || !profile) {
+        alert("Please fill both fields");
+        return;
+      }
+
+      // Go to transition screen
+      document.getElementById("login").classList.remove("active");
+      document.getElementById("transition").classList.add("active");
+
+      // After 2 seconds → Main screen
+      setTimeout(() => {
+        document.getElementById("transition").classList.remove("active");
+        document.getElementById("main").classList.add("active");
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
